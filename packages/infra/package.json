@@ -3,7 +3,8 @@
 	"version": "0.0.0",
 	"scripts": {
 		"lint": "biome check .",
-		"check-types": "tsc --noEmit"
+		"check-types": "tsc --noEmit",
+		"deploy": "ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID"
 	},
 	"devDependencies": {
 		"@aws-amplify/backend": "^1.22.0",
