@@ -1,0 +1,11 @@
+{
+	"js/ts.tsdk.path": "node_modules/typescript/lib",
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"editor.codeActionsOnSave": {
+		"source.addMissingImports.ts": "explicit",
+		"source.fixAll.ts": "explicit"
+	},
+	"editor.defaultFormatter": "biomejs.biome"
+}

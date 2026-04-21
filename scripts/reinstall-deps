@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Delete all node_modules
+find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
+
+# Delete all dist directories
+find . -name "dist" -type d -prune -exec rm -rf '{}' +
+
+# Delete all .turbo directories
+find . -name ".turbo" -type d -prune -exec rm -rf '{}' +
+
+# Install dependencies
+pnpm install "${@}"

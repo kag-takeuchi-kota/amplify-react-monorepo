@@ -1,0 +1,14 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+allowBuilds:
+  '@aws-amplify/cli': true
+  '@parcel/watcher': true
+  core-js: true
+  esbuild: true
+  msw: true
+
+catalog:
+  "react": "^19.2.5"
+  "react-dom": "^19.2.5"
+  "tailwindcss": "^4.2.4"

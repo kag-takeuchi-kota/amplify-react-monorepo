@@ -1,0 +1,46 @@
+#!/bin/sh
+
+package_name=${1}
+
+if [ -z "$package_name" ]; then
+  echo "Usage: $0 <package-name>"
+  exit 1
+fi
+
+# Create the package directory
+mkdir -p packages/$package_name
+
+cd packages/$package_name
+
+# Create a basic package.json file
+cat <<EOL > package.json
+{
+  "name": "@repo/$package_name",
+  "version": "0.0.0",
+  "scripts": {
+    "lint": "biome check .",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
+EOL
+
+mkdir src
+
+# Create a basic tsconfig.json file
+cat <<EOL > tsconfig.json
+{
+  "extends": "@repo/typescript-config/base.json",
+  "include": ["src"]
+}
+EOL
+
+# Format the new files using Biome
+pnpm exec biome format --write .
+
+# Add the utility scripts to the root package.json
+cd ../../
+cat package.json | jq --arg pkg "$package_name" '.scripts += {($pkg): "pnpm -F ./packages/\($pkg)"}' > tmp.json && mv tmp.json package.json
+
+echo "Package '$package_name' created successfully!"

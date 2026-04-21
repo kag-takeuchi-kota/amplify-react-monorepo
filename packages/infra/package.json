@@ -1,0 +1,12 @@
+{
+	"name": "@repo/infra",
+	"version": "0.0.0",
+	"scripts": {
+		"lint": "biome check .",
+		"check-types": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@aws-amplify/backend": "^1.22.0",
+		"@aws-amplify/backend-cli": "^1.8.2"
+	}
+}
