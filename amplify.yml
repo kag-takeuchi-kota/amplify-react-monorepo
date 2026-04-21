@@ -5,16 +5,20 @@ backend:
       commands:
         - pnpm install --frozen-lockfile
         - pnpx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
-frontend:
-  phases:
-    build:
-      commands:
-        - pnpm run build
-  artifacts:
-    baseDirectory: apps/web/dist
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - .turbo/**/*
-      - node_modules/**/*
+
+applications:
+  - appRoot: apps/web
+    frontend:
+      buildPath: /
+      phases:
+        build:
+          commands:
+            - pnpm run build
+      artifacts:
+        baseDirectory: apps/web/dist
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - .turbo/**/*
+          - node_modules/**/*
