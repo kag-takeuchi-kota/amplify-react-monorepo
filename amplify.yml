@@ -1,6 +1,18 @@
 version: 1
 
 applications:
+  - appRoot: packages/infra
+    backend:
+      buildPath: /
+      phases:
+        preBuild:
+          commands:
+            - npm install -g pnpm
+            - pnpm install --frozen-lockfile
+        build:
+          commands:
+            - pnpm infra deploy
+
   - appRoot: apps/web
     frontend:
       buildPath: /
@@ -20,15 +32,3 @@ applications:
         paths:
           - .turbo/**/*
           - node_modules/**/*
-
-  - appRoot: pacakges/infra
-    backend:
-      buildPath: /
-      phases:
-        preBuild:
-          commands:
-            - npm install -g pnpm
-            - pnpm install --frozen-lockfile
-        build:
-          commands:
-            - pnpm infra deploy
