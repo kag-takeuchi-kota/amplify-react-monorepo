@@ -1,28 +1,31 @@
 {
 	"private": true,
 	"scripts": {
-		"build": "turbo run build",
-		"dev": "turbo run dev",
-		"lint": "turbo run lint",
-		"check-types": "turbo run check-types",
+		"build": "dotenv -- turbo run build",
+		"dev": "dotenv -- turbo run dev",
+		"lint": "dotenv -- turbo run lint",
+		"check-types": "dotenv -- turbo run check-types",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
 		"ui": "pnpm -F ./packages/ui",
 		"docs": "pnpm -F ./apps/docs",
 		"web": "pnpm -F ./apps/web",
-		"infra": "pnpm -F ./packages/infra"
+		"infra": "dotenv -- pnpm -F ./packages/infra",
+		"adapter": "pnpm -F ./packages/adapter"
 	},
 	"devDependencies": {
 		"@aws-amplify/cli": "^14.3.0",
 		"@biomejs/biome": "^2.4.12",
 		"@repo/typescript-config": "workspace:^",
 		"@tailwindcss/vite": "^4.2.4",
+		"@tanstack/router-plugin": "^1.167.22",
 		"@types/node": "^25.6.0",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"@vitejs/plugin-react": "^6.0.1",
+		"dotenv-cli": "^11.0.0",
+		"tsdown": "^0.21.9",
 		"turbo": "^2.9.6",
 		"typescript": "^6.0",
-		"vite": "^8.0",
 		"vite-plugin-dts": "^4.5.4"
 	},
 	"packageManager": "pnpm@10.33.0",

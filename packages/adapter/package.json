@@ -1,0 +1,21 @@
+{
+	"name": "@repo/adapter",
+	"version": "0.0.0",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"scripts": {
+		"dev": "tsdown --watch ../infra/amplify_outputs.json",
+		"build": "tsdown",
+		"lint": "biome check .",
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@repo/infra": "workspace:*",
+		"aws-amplify": "^6.16.4"
+	}
+}

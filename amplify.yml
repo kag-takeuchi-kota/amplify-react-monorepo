@@ -1,7 +1,7 @@
 version: 1
 
 applications:
-  - appRoot: packages/infra
+  - appRoot: apps/web
     backend:
       buildPath: /
       phases:
@@ -11,9 +11,8 @@ applications:
             - pnpm install --frozen-lockfile
         build:
           commands:
-            - pnpm infra deploy
+            - pnpm run deploy
 
-  - appRoot: apps/web
     frontend:
       buildPath: /
       phases:
