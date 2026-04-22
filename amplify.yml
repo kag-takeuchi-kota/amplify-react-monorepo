@@ -11,7 +11,7 @@ applications:
             - pnpm install --frozen-lockfile
         build:
           commands:
-            - pnpm run deploy
+            - pnpm infra deploy
 
     frontend:
       buildPath: /
