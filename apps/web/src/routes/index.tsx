@@ -1,8 +1,8 @@
 import { Button } from "@repo/ui";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { tryExec } from "../features/error/error";
 import { RequiredAuth } from "../features/auth/components";
 import { useLogout } from "../features/auth/hooks";
+import { tryExec } from "../features/error/error";
 
 export const Route = createFileRoute("/")({
 	component: () => (

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import type { User } from "@repo/adapter";
+import { useEffect, useState } from "react";
 import { auth } from "./client";
 
 export function useCurrentUser() {

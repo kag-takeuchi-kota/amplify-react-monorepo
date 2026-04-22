@@ -5,5 +5,5 @@ export function initialize() {
 	Amplify.configure(outputs);
 }
 
-export * from "./types";
 export * from "./auth";
+export * from "./types";

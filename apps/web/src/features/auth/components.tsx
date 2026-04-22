@@ -1,9 +1,5 @@
-import { useState } from "react";
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import type { User } from "@repo/adapter";
-import { Navigate, useNavigate } from "@tanstack/react-router";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 import {
 	Button,
 	Card,
@@ -17,6 +13,10 @@ import {
 	InputOTPSlot,
 	Label,
 } from "@repo/ui";
+import { Navigate, useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { auth } from "./client";
 import { useCurrentUser } from "./hooks";
 

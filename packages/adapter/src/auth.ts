@@ -1,10 +1,10 @@
 import {
+	confirmSignUp,
+	getCurrentUser,
+	resendSignUpCode,
 	signIn,
 	signOut,
 	signUp,
-	confirmSignUp,
-	resendSignUpCode,
-	getCurrentUser,
 } from "aws-amplify/auth";
 import type { AuthClient, User } from "./types";
 

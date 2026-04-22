@@ -1,7 +1,7 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
 import { initialize as initializeAdapter } from "@repo/adapter";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
+import React from "react";
+import { createRoot } from "react-dom/client";
 import "./style.css";
 import { routeTree } from "./routeTree.gen";
 
